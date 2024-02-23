@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Project;
 use App\Models\Technology;
 
-class ProjectTableSeeder extends Seeder
+class TechnologyTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,13 +17,13 @@ class ProjectTableSeeder extends Seeder
      */
     public function run()
     {
-        Project :: factory()
+        Technology :: factory()
         -> count(10)
         -> create()
-        -> each(function($project){
-            $technologies = Technology :: inRandomOrder() -> limit(3) -> get();
-            $project -> technologies() -> attach($technologies);
-            $project -> save();
+        -> each(function($technology){
+            $projects = Project :: inRandomOrder() -> limit(3) -> get();
+            $technology -> projects() -> attach($projects);
+            $technology -> save();
         });
     }
 }
