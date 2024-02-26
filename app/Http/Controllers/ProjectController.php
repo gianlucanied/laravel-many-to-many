@@ -13,6 +13,6 @@ class ProjectController extends Controller
 
         $projects = Project :: all();
 
-        return view('index', compact('projects'));
+        return view('pages.index', compact('projects'));
     }
 }

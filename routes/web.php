@@ -6,11 +6,7 @@ use App\Http\Controllers\ProjectController;
 
 use App\Http\Controllers\TechnologyController;
 
-Route::get('/', function() {
 
-    return view('pages.index');
-});
-
-Route:: get('/projects', [ProjectController :: class, 'index'])
+Route::get('/', [ProjectController :: class, 'index'])
     -> name('project.index');
 

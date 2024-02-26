@@ -10,7 +10,7 @@
                 {{ $project -> title}}
                     <br>
                         <ul>
-                        @foreach ($project -> $technologies as $technology)
+                        @foreach ($project -> technologies as $technology)
                             <li>
                                 {{ $technology -> name }}
                             </li>
