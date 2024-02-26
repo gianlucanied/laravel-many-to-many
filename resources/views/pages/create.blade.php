@@ -12,6 +12,10 @@
     <label for="title">Titolo</label>
     <input type="text" name="title" id="title">
     <br>
+
+    <label for="type">Tipo</label>
+    <input type="type" name="type" id="type">
+    <br>
     <input type="submit" value="Crea">
 </form>
 @endsection

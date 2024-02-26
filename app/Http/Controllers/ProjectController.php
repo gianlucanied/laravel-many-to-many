@@ -16,6 +16,13 @@ class ProjectController extends Controller
         return view('pages.index', compact('projects'));
     }
 
+    public function show($id) {
+
+        $project = Project :: find($id);
+
+        return view('pages.show', compact('project'));
+    }
+
     public function create() {
         
         return view('pages.create');
@@ -28,7 +35,11 @@ class ProjectController extends Controller
         $project = new Project();
 
         $project -> title = $data['title'];
+        $project -> type = $data['type'];
+
 
         $project -> save();
+
+        return redirect() -> route('project.show', $project -> id);
     }
 }

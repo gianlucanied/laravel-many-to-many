@@ -8,17 +8,11 @@
 <br><br>
     <ul>
         @foreach ($projects as $project)
+        <a href="{{ route('project.show', $project -> id) }}">
             <li>
                 {{ $project -> title}}
-                    <br>
-                        <ul>
-                        @foreach ($project -> technologies as $technology)
-                            <li>
-                                {{ $technology -> name }}
-                            </li>
-                        @endforeach
-                        </ul>
             </li>
+        </a>
         @endforeach
     </ul>
 @endsection

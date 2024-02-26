@@ -10,6 +10,9 @@ use App\Http\Controllers\TechnologyController;
 Route::get('/', [ProjectController :: class, 'index'])
     -> name('project.index');
 
+Route::get('/projects/{id}', [ProjectController :: class, 'show'])
+    -> name('project.show');
+
 Route::get('/create', [ProjectController :: class, 'create'])
     -> name('project.create');
 
