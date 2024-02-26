@@ -4,6 +4,8 @@
 @endsection
 @section('content')
 <h1>Projects</h1>
+<a href="{{ route('project.create') }}">Create new project</a>
+<br><br>
     <ul>
         @foreach ($projects as $project)
             <li>

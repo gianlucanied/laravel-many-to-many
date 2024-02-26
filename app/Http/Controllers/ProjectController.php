@@ -15,4 +15,20 @@ class ProjectController extends Controller
 
         return view('pages.index', compact('projects'));
     }
+
+    public function create() {
+        
+        return view('pages.create');
+    }
+
+    public function store(Request $request) {
+
+        $data = $request -> all();
+
+        $project = new Project();
+
+        $project -> title = $data['title'];
+
+        $project -> save();
+    }
 }
