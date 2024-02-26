@@ -13,6 +13,10 @@
                 {{ $project -> title}}
             </li>
         </a>
+
+        <a href="{{ route('project.edit', $project -> id) }}">Edit</a>
+            <br>
+            <br>
         @endforeach
     </ul>
 @endsection

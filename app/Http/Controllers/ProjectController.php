@@ -42,4 +42,13 @@ class ProjectController extends Controller
 
         return redirect() -> route('project.show', $project -> id);
     }
+
+    public function edit($id) {
+
+        $project = Project :: find($id);
+
+        $project = Project :: all();
+
+        return view('pages.edit', compact('project'));
+    }
 }
