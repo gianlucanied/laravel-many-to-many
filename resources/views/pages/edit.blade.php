@@ -7,7 +7,7 @@
     <form method="POST">
 
     @csrf
-    @method("POST")
+    @method("PUT")
 
     <label for="title">Titolo</label>
     <input type="text" name="title" id="title" value="{{ $project -> title }}">

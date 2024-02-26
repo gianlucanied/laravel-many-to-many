@@ -47,8 +47,21 @@ class ProjectController extends Controller
 
         $project = Project :: find($id);
 
-        $project = Project :: all();
-
         return view('pages.edit', compact('project'));
+    }
+
+    public function update(Request $request, $id) {
+
+        $data = $request -> all();
+
+        $project = Project :: find($id);
+
+        $project -> title = $data['title'];
+        $project -> type = $data['type'];
+
+
+        $project -> save();
+
+        return redirect() -> route('project.show', $project -> id);
     }
 }
