@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Project;
 use App\Models\Technology;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -32,10 +33,16 @@ class ProjectController extends Controller
 
         $data = $request -> all();
 
+        $img = $data['image'];
+        $img_path = Storage :: disk('public')
+        ->put('images', $img);
+
+        
         $project = new Project();
 
         $project -> title = $data['title'];
         $project -> type = $data['type'];
+        $project -> image = $img_path;
 
 
         $project -> save();

@@ -18,7 +18,8 @@ class ProjectFactory extends Factory
     {
         return [
         "title" => fake() -> word,
-        "type" => fake() -> word
+        "type" => fake() -> word,
+        "image" => null,
         ];
     }
 }

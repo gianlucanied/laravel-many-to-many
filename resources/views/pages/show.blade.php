@@ -9,5 +9,7 @@
     {{$project -> title}}
     <br>
     {{$project -> type}}
+    <br>
+    <img src="{{ asset('storage/' . $project -> image) }}" alt="" width ="300px">
 </div>
 @endsection
