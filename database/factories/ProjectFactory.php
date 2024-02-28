@@ -19,7 +19,7 @@ class ProjectFactory extends Factory
         return [
         "title" => fake() -> word,
         "type" => fake() -> word,
-        "image" => null,
+        "image" => 'https://picsum.photos/200/300?random=' . fake() -> numberBetween(1, 100),
         ];
     }
 }

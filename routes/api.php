@@ -10,6 +10,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route :: group(['prefix' => '/v1'], function() {
-    Route :: get('test', [ ApiController :: class, 'getTest'])
+    Route :: get('test', [ ApiController :: class, 'getProject'])
     -> name('api.test');
+    Route :: get('projects', [ ApiController :: class, 'getProject'])
+    -> name('api.projects');
 });
